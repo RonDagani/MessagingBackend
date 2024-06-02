@@ -1,0 +1,22 @@
+{
+    "version": "0.0.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "program": "./app/main.py",
+            "args": [
+                "run",
+                "app:app",
+                "--reload"
+            ],
+            "env": {
+                "MONGODB-CONNECTION-STRING": "value1",
+                "ENV_VAR2": "value2"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

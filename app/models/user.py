@@ -8,7 +8,7 @@ class User(BaseModel):
     blocked_users: List[UUID] = []
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "user_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
                 "username": "john_doe",

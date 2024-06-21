@@ -12,8 +12,9 @@
                 "--reload"
             ],
             "env": {
-                "MONGODB-CONNECTION-STRING": "value1",
-                "ENV_VAR2": "value2"
+                "MONGODB-CONNECTION-STRING": "mongodb+srv://admin:admin@messagingdb.v42pjn0.mongodb.net/?retryWrites=true&w=majority&appName=MessagingDB",
+                "REDIS_HOST": "localhost",
+                "REDIS_PORT": "9999",
             },
             "console": "integratedTerminal",
             "justMyCode": true

@@ -20,22 +20,22 @@ class DBConnection:
 
                 # MongoDB
                 cls._instance.mongo_client = MongoClient(
-                    os.environ.get('MONGODB-CONNECTION-STRING'),
+                    os.environ.get('MONGODB_CONNECTION_STRING'),
                     uuidRepresentation='standard'
                 )
                 cls._instance.mongo_client.admin.command('ping')
                 print("Pinged your deployment. You successfully connected to MongoDB!")
-                cls._instance.db = cls._instance.mongo_client.get_database("Messaging")
-                # Enable sharding on the database
-                cls._instance.mongo_client.admin.command('enableSharding', 'Messaging')
+                cls._instance.db = cls._instance.mongo_client.get_database("MessagingDB")
+                
+                cls._instance.mongo_client.admin.command('enableSharding', 'MessagingDB')
             
                 # Shard the messages collection by user_id
-                cls._instance.mongo_client.admin.command('shardCollection', 'Messaging.messages', key={'user_id': ASCENDING})
+                cls._instance.mongo_client.admin.command('shardCollection', 'MessagingDB.messages', key={'reciever_id': ASCENDING})
             
                 # Create indexes
                 messages_collection = cls._instance.db.get_collection("messages")
-                messages_collection.create_index([('user_id', ASCENDING), ('timestamp', ASCENDING)])
-                messages_collection.create_index('created_at', expireAfterSeconds=3600 * 24 * 30)  # 30 days TTL index
+                messages_collection.create_index([('reciever_id', ASCENDING), ('timestamp', ASCENDING)])
+                messages_collection.create_index('created_at', expireAfterSeconds=3600 * 24 )  # 1 days TTL index
 
             except Exception as e:
                 print(e)

@@ -12,9 +12,9 @@
                 "--reload"
             ],
             "env": {
-                "MONGODB-CONNECTION-STRING": "mongodb+srv://admin:admin@messagingdb.v42pjn0.mongodb.net/?retryWrites=true&w=majority&appName=MessagingDB",
-                "REDIS_HOST": "localhost",
-                "REDIS_PORT": "9999",
+                "MONGODB_CONNECTION_STRING": "mongodb+srv://admin:S5Crv6j1mGnoJy0U@messagingdb-46c8880.v8dihsj.mongodb.net",
+                "REDIS_HOST": "rediscluster-5fb594a.t1kfch.0001.use1.cache.amazonaws.com",
+                "REDIS_PORT": "6379"
             },
             "console": "integratedTerminal",
             "justMyCode": true

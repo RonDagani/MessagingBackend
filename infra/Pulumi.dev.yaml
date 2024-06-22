@@ -1,0 +1,9 @@
+config:
+  aws:region: us-east-1
+  messagingbackend:atlasApiKeyPrivate:
+    secure: AAABAKHOndhRs987i826UlI1kNBr0wrEQgnhIaSoPNfs4Ck1HllFS72XfAVDCGwyW7+9+DPkiQA7J+G8ls5JyiIoFfc=
+  messagingbackend:atlasApiKeyPublic: jjkuzqxc
+  messagingbackend:atlasProjectId: 665c930b540d27763cf13fb3
+  messagingbackend:mongodbAdminPass:
+    secure: AAABAOz3Z7HWwsyUvkJLL3m1PiFTBA4NauOfPj/djGT+cpLu+2HvWVpoMi61G4TW
+  messagingbackend:mongodbAdminUsername: admin

@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import user, message, group
+from mangum import Mangum
 
 app = FastAPI()
+handler = Mangum(app)
 
 app.include_router(user.userRouter().router)
 app.include_router(message.messageRouter().router)
